@@ -4,7 +4,9 @@
 @use "./styles/partials/typography";
 @use "./styles/partials/reset";
 
-
+body {
+  min-width: 32rem;
+}
 .App {
   display: flex;
   flex-direction: column;
