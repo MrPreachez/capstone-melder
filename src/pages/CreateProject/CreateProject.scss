@@ -4,3 +4,55 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
 
+.section {
+    &__createPage {
+        padding:1rem;
+        width:100%;
+    }
+}
+.create {
+
+    &__banner {
+        height: 20rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__formBorder {
+        border: 1px solid $primarySilver;
+        border-radius: 1rem;
+        padding:2rem;
+
+    }
+}
+
+.head{
+    &__title {
+        font-size: 4rem;
+        line-height: 4.4rem;
+        width: 24rem;
+    }
+    &__subhead {
+        margin:1rem 0 2rem 0;
+    }
+    &__list {
+        width:90%;
+        max-width: 50rem;
+        margin:0 auto  
+    }
+
+    &__steps {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+    &__text {
+        margin:2rem;
+    }
+}
+.addProject {
+    &__field {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
