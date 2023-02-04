@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+@mixin reset-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  } 
+  @mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+  }
+ 
+  @mixin tablet {
+    @media (min-width: $tabletBreakpoint){
+      @content;
+    }   
+  }
+  @mixin desktop {
+    @media (min-width: $desktopBreakpoint){
+      @content;
+    }
+  }
+  

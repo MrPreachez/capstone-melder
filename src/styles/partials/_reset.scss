@@ -1,0 +1,20 @@
+@use "./variables" as *;
+@use "./typography";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-stack;
+  margin:0;
+  width:100%;
+  max-width: 1020px;
+}
