@@ -35,7 +35,7 @@ function CreateProject() {
                 type="text"
                 id="name"
                 name="project"
-                placeholder="Give Your Meld a Name"
+                placeholder="Give you Meld a name"
               />
             </div>
 
