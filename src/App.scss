@@ -1,10 +1,9 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/global" as *;
 @use "./styles/partials/mixins" as *;
+@use "./styles/partials/typography";
+@use "./styles/partials/reset";
 
-body {
-  min-width: 32rem;
-}
 
 .App {
   display: flex;
