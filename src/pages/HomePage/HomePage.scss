@@ -1,0 +1,38 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/reset";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  &__section {
+    background-color: darkkhaki;
+  }
+}
+.card {
+  &__section {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.about {
+  &__card {
+    border: 1px solid black;
+    @include tablet {
+      width: 50%;
+    }
+  }
+}
+
+.list {
+  @include tablet {
+    &__card {
+      width: 50%;
+    }
+  }
+}

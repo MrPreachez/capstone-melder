@@ -1,0 +1,14 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/global" as *;
+@use "./styles/partials/mixins" as *;
+
+body {
+  min-width: 32rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh
+}
