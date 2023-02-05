@@ -3,3 +3,47 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
+
+.section {
+    width: 100%;
+    padding: 1rem;
+}
+
+.result {
+
+    &__head {
+        height: 18rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__heading {
+        font-size: 4rem;
+        line-height: 4.2rem;
+    }
+    &__subheading {
+        margin: 1rem;
+    }
+    &__question {
+        margin-top:auto;
+        width:100%;
+        border: 1px solid $primaryGreen;
+        border-radius: 5px;
+        background-color: $secondaryMercury;
+        padding: 1rem;
+        margin:1rem 0 2rem 0;  
+    }
+    &__display {
+        font-weight: 600;
+        
+    }
+    &__generate {
+        width: 100%;
+        min-height: 10rem;
+        border: 1px solid $primaryGreen;
+        background-color: $secondaryoffWhite;
+        margin-top: 2rem;
+
+    }
+}
