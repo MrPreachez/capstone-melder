@@ -6,8 +6,12 @@
 
 .hero {
   &__section {
-    height: 20rem;
-    background-color: darkkhaki;
+    height: 24rem;
+    background-image: url("../../assets/images/MelderBG.jpg");
+  }
+  &__title {
+    font-family:$font-stackB;
+    font-weight: 400;
   }
 }
 .card {

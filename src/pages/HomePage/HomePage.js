@@ -4,9 +4,10 @@ function HomePage() {
   return (
     <main className="section section__homePage">
       <section className="hero__section">
+        <h2>Hi! I'm</h2>
         <h1 className="hero__title">MELDER</h1>
         <h2 className="hero__subheading">
-          Melding the many thoughts, ideas and opinions together
+          Let's bring minds together
         </h2>
       </section>
       
@@ -15,7 +16,7 @@ function HomePage() {
             <h2 className="about__title">MELDER brings minds together.</h2>
             <p className="about__text">
               The idea behind MELDER is to use AI to support the process of
-              collective mind melds. Whether your an organization, business, or
+              collective mind melds. Whether you're an organization, business, or
               group, qualitative feedback and opinion can be difficult to make
               sense of or summarise consisely. The belief behind MELDER is that
               language modelling may serve as a useful tool for this purpose.
