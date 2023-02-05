@@ -11,7 +11,7 @@ function AddInput() {
         </div>
         <div className="input__subhead">
           <h3 className="input__subheadingA">
-            You've been invited to respond to the question below
+            Your response to the following questionaire has been requested
           </h3>
           <p className="input__subheadingB">
             Please take a moment to consider the question carefully before
@@ -20,27 +20,36 @@ function AddInput() {
         </div>
       </section>
       <div className="addResponse__question">
-        <h2 className="addResponse__display">
-          This is where the question will be displayed
-        </h2>
+        <p className="addResponse__display">
+          This is where the question will be displayed?
+        </p>
       </div>
 
       <section className="input__form">
         <form className="addResponse__form">
-          <label className="addResponse__label">ENTER YOUR NAME</label>
-          <input
-            className="addResponse__name"
-            type="text"
-            name="name"
-            placeholder="Type name here"
-          />
-          <textarea
-            className="addResponse__input"
-            name="question"
-            placeholder="Enter your response here"
-          ></textarea>
+          <div className="addResponse__formBorder">
+            <label className="addResponse__label">ENTER YOUR NAME</label>
+            <input
+              className="addResponse__name"
+              type="text"
+              name="name"
+              placeholder="Type name here"
+            />
+            <textarea
+              className="addResponse__input"
+              name="question"
+              placeholder="Enter your response here"
+            ></textarea>
+          </div>
+
           <button className="addResponse__CTA--button">Submit Response</button>
-          <button className="input__CTA--button">Submit Project</button>
+          <div className="input__CTA">
+            <p className="input__submitText">
+              When all your responses have been gathered, submit the project and
+              await your summary
+            </p>
+            <button className="input__CTA--button">Submit Project</button>
+          </div>
         </form>
       </section>
     </main>
