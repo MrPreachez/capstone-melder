@@ -8,36 +8,48 @@
   &__section {
     height: 24rem;
     background-image: url("../../assets/images/MelderBG.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__title {
-    font-family:$font-stackB;
+    font-family: $font-stackB;
     font-weight: 400;
+    font-size: 5rem;
   }
 }
 .card {
   &__section {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    padding: 2rem 1rem;
+
+    &__section--layout {
+      @include tablet {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
 
 .about {
   &__card {
-    border: 1px solid black;
-    @include tablet {
-      width: 50%;
-    }
+    padding-bottom: 2rem;
+
+  }
+}
+.homeCreate {
+  &__CTA {
+    border: 1px solid $primaryGreen;
+    padding: 1rem 2rem;
+  }
+  &__heading {
+    margin-bottom: 1rem;
+  }
+  &__subheading {
+    margin-bottom: 2rem;
+  }
+  &__CTA--button {
+    width: 100%;
   }
 }
 
-.list {
-  @include tablet {
-    &__card {
-      width: 50%;
-    }
-  }
-}

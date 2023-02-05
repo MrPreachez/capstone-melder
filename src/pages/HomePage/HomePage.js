@@ -1,37 +1,59 @@
+import { Link } from "react-router-dom";
 import "./HomePage.scss";
 
 function HomePage() {
   return (
-    <main className="section section__homePage">
+    <main className="section__homePage">
       <section className="hero__section">
-        <h2>Hi! I'm</h2>
-        <h1 className="hero__title">MELDER</h1>
-        <h2 className="hero__subheading">
-          Let's bring minds together
-        </h2>
+        <div className="hero__head">
+          <h2>Hi! I'm</h2>
+          <h1 className="hero__title">MELDER</h1>
+          <h2 className="hero__subheading">Let's bring minds together</h2>
+        </div>
       </section>
-      
-        <section className="card__section">
+
+      <section className="card__section">
+        <div className="card__section--layout">
           <div className="about__card">
-            <h2 className="about__title">MELDER brings minds together.</h2>
+            <h2 className="about__title">What is Melder?</h2>
             <p className="about__text">
-              The idea behind MELDER is to use AI to support the process of
-              collective mind melds. Whether you're an organization, business, or
-              group, qualitative feedback and opinion can be difficult to make
-              sense of or summarise consisely. The belief behind MELDER is that
-              language modelling may serve as a useful tool for this purpose.
+              The idea behind MELDER is to harness the support of AI in the
+              processing of group qualitative feedback and opinion. The name
+              Melder comes from the idea of collective mind melds, that
+              experience groups of people claim when working together
+              harmoniously and seemlessly, like one mind. Whether you're an
+              organization, business, or group, qualitative feedback and opinion
+              can be difficult to make sense of or summarise consisely. The
+              belief behind MELDER is that language modelling may serve as a
+              useful tool for this purpose. As this is a prototypal product, we
+              are still testing the various outputs and how to adjust those to
+              different requirements. Try for yourself!
             </p>
           </div>
-          <div className="list__card">
-            <h2 className="list__title">Explore Past Melds</h2>
+          <div className="homeCreate__CTA">
+            <h3 className="homeCreate__heading">What's your question?</h3>
+            <h4 className="homeCreate__subheading">
+              Creating Your own Melder Project is simple!{" "}
+            </h4>
+            <Link to="/create">
+              <button className="homeCreate__CTA--button">Create Now</button>
+            </Link>
+          </div>
+        </div>
+
+        <div className="list__card">
+          <h2 className="list__title">Explore Past Examples</h2>
+          <div>
             <ul className="list__group">
-              <li>What do you think of this...</li>
-              <li>How was the event for you?</li>
-              <li>What do you feel about politics</li>
+              <li> 
+                <p>ProjectTitle</p>
+                <p>Question</p>
+              </li>
+            
             </ul>
           </div>
-        </section>
-      
+        </div>
+      </section>
     </main>
   );
 }
