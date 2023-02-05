@@ -3,3 +3,24 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
+
+.section {
+    &__inputPage {
+        padding:1rem;
+        width: 100%;
+    }
+}
+.input {
+
+    &__banner {
+        height: 20rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__heading {
+        font-size: 4rem;
+        line-height:4.4rem;
+        width:30rem;
+    }
+}
