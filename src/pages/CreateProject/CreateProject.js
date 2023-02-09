@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./CreateProject.scss";
 
 
@@ -8,12 +8,12 @@ function CreateProject() {
  
 async function handleSubmit(e) {
   e.preventDefault();
-  const creator_name = e.target.creator_name.value;
+  const creator_name = e.target.name.value;
   const project_name = e.target.project.value;
   const question = e.target.question.value;
   
   if ( !creator_name || !project_name || !question ) {
-    alert('Please fill in all fields to submit a project');
+    alert('Please fill in all fields to submit your project');
   }else {
     try {
       const response = await axios.post(`${process.env.REACT_APP_URL}/project`, {
@@ -21,10 +21,10 @@ async function handleSubmit(e) {
         project_name,
         question,
       });
-      
-      if (response.status ===201) {
+      console.log(response)
+      if (response.status === 201) {
         alert("Your project has been uploaded, you will be directed to you questionnaire");
-        const projectId = response.id;
+        const projectId = response.data.id;
         navigate(`input/${projectId}`);
       }
     } catch (error) {
@@ -61,6 +61,17 @@ async function handleSubmit(e) {
       <section className="create__form">
         <form className="addProject">
           <div className="create__formBorder">
+          <div className="addProject__field addProject__field1">
+              <label className="addProject__label-A">PROJECT NAME</label>
+
+              <input
+                className="addProject__inputA"
+                type="text"
+                id="name"
+                name="Name"
+                placeholder="Full Name"
+              />
+            </div>
             <div className="addProject__field addProject__field1">
               <label className="addProject__label-A">PROJECT NAME</label>
 
