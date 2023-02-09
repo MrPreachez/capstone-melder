@@ -8,10 +8,9 @@ function CreateProject() {
   async function handleSubmit(e) {
     e.preventDefault();
     const creator_name = e.target.creator.value;
-
     const project_name = e.target.project.value;
     const question = e.target.question.value;
-    console.log(e.target)
+    console.log(e.target);
     console.log(creator_name, project_name, question);
     if (!creator_name || !project_name || !question) {
       alert("Please fill in all fields to submit your project");

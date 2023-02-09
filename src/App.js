@@ -15,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/create" element={<CreateProject />}/>
-        <Route path="/input/:id" element={<AddInput />}/>
-        <Route path="/result/:id" element={<Results />} /> 
+        <Route path="/input/:projectID" element={<AddInput />}/>
+        <Route path="/result/:projectID" element={<Results />} /> 
       </Routes>
       </BrowserRouter>
 
