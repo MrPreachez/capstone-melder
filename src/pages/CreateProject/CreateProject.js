@@ -2,39 +2,46 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./CreateProject.scss";
 
-
 function CreateProject() {
- const navigate = useNavigate(); 
- 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const creator_name = e.target.name.value;
-  const project_name = e.target.project.value;
-  const question = e.target.question.value;
-  
-  if ( !creator_name || !project_name || !question ) {
-    alert('Please fill in all fields to submit your project');
-  }else {
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_URL}/project`, {
-        creator_name,
-        project_name,
-        question,
-      });
-      console.log(response)
-      if (response.status === 201) {
-        alert("Your project has been uploaded, you will be directed to you questionnaire");
-        const projectId = response.data.id;
-        navigate(`input/${projectId}`);
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const creator_name = e.target.creator.value;
+
+    const project_name = e.target.project.value;
+    const question = e.target.question.value;
+    console.log(e.target)
+    console.log(creator_name, project_name, question);
+    if (!creator_name || !project_name || !question) {
+      alert("Please fill in all fields to submit your project");
+    } else {
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_URL}/project`,
+          {
+            creator_name,
+            project_name,
+            question,
+          }
+        );
+        console.log(response);
+        if (response.status === 201) {
+          const projectId = response.data.project_id;
+          alert(
+            "Your project has been uploaded, you will be directed to you questionnaire"
+          );
+
+          navigate(`/input/${projectId}`);
+        }
+      } catch (error) {
+        console.log(error);
+        alert("An error occured while uploading, please try again");
       }
-    } catch (error) {
-      console.log(error);
-      alert('An error occured while uploading, please try again')
     }
   }
-}
-  //create handler to send form data to 
-  
+  //create handler to send form data to
+
   return (
     <main className="section section__createPage">
       <section className="create__head">
@@ -59,16 +66,16 @@ async function handleSubmit(e) {
         </p>
       </section>
       <section className="create__form">
-        <form className="addProject">
+        <form className="addProject" onSubmit={handleSubmit}>
           <div className="create__formBorder">
-          <div className="addProject__field addProject__field1">
+            <div className="addProject__field addProject__field1">
               <label className="addProject__label-A">PROJECT NAME</label>
 
               <input
                 className="addProject__inputA"
                 type="text"
                 id="name"
-                name="Name"
+                name="creator"
                 placeholder="Full Name"
               />
             </div>
@@ -97,11 +104,8 @@ async function handleSubmit(e) {
               ></textarea>
             </div>
           </div>
-          
-            <button className="create__CTA--button" onSubmit={handleSubmit}>create</button>
-          
 
-          
+          <button className="create__CTA--button">create</button>
         </form>
       </section>
     </main>
