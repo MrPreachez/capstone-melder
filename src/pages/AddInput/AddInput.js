@@ -1,6 +1,23 @@
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "./AddInput.scss";
 
+
+
 function AddInput() {
+  const navigate = useNavigate;
+  const { projectID } = useParams();
+
+  useEffect(() => {
+    const getProject = async () => {
+      try {
+        const { data } = await axios.get(
+          
+        )
+      }
+    }
+  })
+
   return (
     <main className="section section__inputPage">
       <section className="input__head">
