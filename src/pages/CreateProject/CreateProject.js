@@ -1,6 +1,40 @@
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import "./CreateProject.scss";
 
+
 function CreateProject() {
+ const navigate = useNavigate(); 
+ 
+async function handleSubmit(e) {
+  e.preventDefault();
+  const creator_name = e.target.creator_name.value;
+  const project_name = e.target.project.value;
+  const question = e.target.question.value;
+  
+  if ( !creator_name || !project_name || !question ) {
+    alert('Please fill in all fields to submit a project');
+  }else {
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_URL}/project`, {
+        creator_name,
+        project_name,
+        question,
+      });
+      
+      if (response.status ===201) {
+        alert("Your project has been uploaded, you will be directed to you questionnaire");
+        const projectId = response.id;
+        navigate(`input/${projectId}`);
+      }
+    } catch (error) {
+      console.log(error);
+      alert('An error occured while uploading, please try again')
+    }
+  }
+}
+  //create handler to send form data to 
+  
   return (
     <main className="section section__createPage">
       <section className="create__head">
@@ -35,7 +69,7 @@ function CreateProject() {
                 type="text"
                 id="name"
                 name="project"
-                placeholder="Give you Meld a name"
+                placeholder="Give your Meld a name"
               />
             </div>
 
@@ -52,8 +86,11 @@ function CreateProject() {
               ></textarea>
             </div>
           </div>
+          
+            <button className="create__CTA--button" onSubmit={handleSubmit}>create</button>
+          
 
-          <button className="create__CTA--button">create</button>
+          
         </form>
       </section>
     </main>
