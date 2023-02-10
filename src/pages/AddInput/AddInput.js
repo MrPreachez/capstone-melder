@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./AddInput.scss";
 
 function AddInput() {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { projectID } = useParams();
   const [currentProject, setCurrentProject] = useState(null);
 

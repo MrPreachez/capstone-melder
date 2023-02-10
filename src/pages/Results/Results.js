@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Results.scss";
 
+
 function Results() {
+  
   return (
     <main className="section section__resultPage">
       <section className="result__head">
