@@ -1,9 +1,38 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Results.scss";
 
 
-function Results() {
+function Result() {
+  const { projectID } = useParams();
+  const [ currentResult, setCurrentResult] = useState(null);
   
+
+  useEffect(() => {
+    const getResult = async () => {
+      try {
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_URL}/project/${projectID}/result`
+        );
+        setCurrentResult(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getResult();
+  }, [projectID]);
+
+  if (!currentResult) {
+    return (
+      <div>
+        Hmm... something doesn't seem write. Please come back later if the page
+        does not load shortly
+      </div>
+    );
+  }
+
+
   return (
     <main className="section section__resultPage">
       <section className="result__head">
@@ -31,4 +60,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default Result;

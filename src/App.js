@@ -4,7 +4,7 @@ import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
 import CreateProject from './pages/CreateProject/CreateProject';
 import AddInput from './pages/AddInput/AddInput';
-import Results from './pages/Results/Results';
+import Result from './pages/Results/Results';
 
 
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/create" element={<CreateProject />}/>
         <Route path="/input/:projectID" element={<AddInput />}/>
-        <Route path="/result/:projectID" element={<Results />} /> 
+        <Route path="/result/:projectID" element={<Result />} /> 
       </Routes>
       </BrowserRouter>
 
