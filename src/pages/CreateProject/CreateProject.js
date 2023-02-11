@@ -9,10 +9,11 @@ function CreateProject() {
     e.preventDefault();
     const creator_name = e.target.creator.value;
     const project_name = e.target.project.value;
+    const response_type = e.target.type.value;
     const question = e.target.question.value;
-    console.log(e.target);
-    console.log(creator_name, project_name, question);
-    if (!creator_name || !project_name || !question) {
+    console.log(e.target.type.value)
+    console.log(creator_name, project_name, response_type, question);
+    if (!creator_name || !project_name || !question || !response_type ) {
       alert("Please fill in all fields to submit your project");
     } else {
       try {
@@ -21,6 +22,7 @@ function CreateProject() {
           {
             creator_name,
             project_name,
+            response_type,
             question,
           }
         );
@@ -88,6 +90,18 @@ function CreateProject() {
                 name="project"
                 placeholder="Give your Meld a name"
               />
+            </div>
+            <div className="addProject__field addProject__field2">
+              <label className="addProject__label-B">
+                Type of response
+              </label>
+
+              <textarea
+                className="addProject__inputB"
+                id="msg"
+                name="type"
+                placeholder="Type your question here"
+              ></textarea>
             </div>
 
             <div className="addProject__field addProject__field2">

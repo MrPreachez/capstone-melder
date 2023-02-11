@@ -45,7 +45,7 @@ function Result() {
         </div>
       </section>
       <section className="result__generate">
-        <p className="result__generate--text">generated response</p>
+        <p className="result__generate--text">{currentResult.result}</p>
       </section>
       <section className="names__container">
         <div className="names__list">
