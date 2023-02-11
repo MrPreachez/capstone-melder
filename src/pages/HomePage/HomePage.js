@@ -1,19 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HomeCarousel from "../../components/HomeCarousel/HomeCarousel";
 import "./HomePage.scss";
 
 
 function HomePage() {
-const [allProjects, setAllProjects] = useState(null)
-console.log(allProjects)
+  const [allProjects, setAllProjects] = useState(null);
+
+  console.log(allProjects);
   useEffect(() => {
     const getAllProjects = async () => {
       try {
         const { data } = await axios.get(
           `${process.env.REACT_APP_URL}/project`
         );
-        console.log(data)
+        console.log(data);
         setAllProjects(data);
       } catch (error) {
         console.error(error);
@@ -22,6 +24,7 @@ console.log(allProjects)
     getAllProjects();
   }, []);
 
+  
   return (
     <main className="section__homePage">
       <section className="hero__section">
@@ -81,6 +84,11 @@ console.log(allProjects)
           </div>
         </div>
       </section>
+      <div>
+        {allProjects && <HomeCarousel allProjects={allProjects} />}
+      </div>
+      
+
     </main>
   );
 }
