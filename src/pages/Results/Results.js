@@ -7,6 +7,7 @@ import "./Results.scss";
 function Result() {
   const { projectID } = useParams();
   const [ currentResult, setCurrentResult] = useState(null);
+  const [ currentProject, setCurrentProject] = useState(null)
   
 
   useEffect(() => {
@@ -23,6 +24,21 @@ function Result() {
     getResult();
   }, [projectID]);
 
+  useEffect(() => {
+    const getProject = async () => {
+      try {
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_URL}/project/${projectID}`
+        );
+        setCurrentProject(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getProject();
+  }, [projectID]);
+
+
   if (!currentResult) {
     return (
       <div>
@@ -36,11 +52,11 @@ function Result() {
   return (
     <main className="section section__resultPage">
       <section className="result__head">
-        <h2 className="result__heading">THE BIG EVENT Result</h2>
+        <h2 className="result__heading">{currentProject.project_name} Result</h2>
         <h3 className="result__subheading">Melder has spoken!</h3>
         <div className="result__question">
           <p className="result__display">
-            What was your highlight at the event?
+            Question: {currentProject.question}
           </p>
         </div>
       </section>
