@@ -1,21 +1,49 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.scss";
 
+
 function HomePage() {
+const [allProjects, setAllProjects] = useState(null)
+console.log(allProjects)
+  useEffect(() => {
+    const getAllProjects = async () => {
+      try {
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_URL}/project`
+        );
+        console.log(data)
+        setAllProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getAllProjects();
+  }, []);
+
   return (
     <main className="section__homePage">
       <section className="hero__section">
         <div className="hero__head">
           <h2>Hi! I'm</h2>
           <h1 className="hero__title">MELDER</h1>
-          <h2 className="hero__subheading">Let's bring minds together</h2>
+          <h2 className="hero__subheading">
+            Together, we can bring minds together
+          </h2>
         </div>
       </section>
 
       <section className="card__section">
         <div className="card__section--layout">
           <div className="about__card">
-            <h2 className="about__title">What is Melder?</h2>
+            <h2 className="about__title">
+              Ask your question
+              <br />
+              Gather Feedback
+              <br />
+              And let Melder do the rest
+            </h2>
             <p className="about__text">
               The idea behind MELDER is to harness the support of AI in the
               processing of group qualitative feedback and opinion. The name
@@ -42,14 +70,13 @@ function HomePage() {
         </div>
 
         <div className="list__card">
-          <h2 className="list__title">Explore Past Examples</h2>
+          <h2 className="list__title">Explore Some Past Melder's</h2>
           <div>
             <ul className="list__group">
-              <li> 
-                <p>ProjectTitle</p>
+              <li>
+                {/* <p>{allProjects.project_name}</p> */}
                 <p>Question</p>
               </li>
-            
             </ul>
           </div>
         </div>

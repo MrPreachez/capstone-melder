@@ -12,6 +12,9 @@
     justify-content: center;
     align-items: center;
   }
+  &__head {
+    width: 24rem;
+  }
   &__title {
     font-family: $font-stackB;
     font-weight: 400;
@@ -32,15 +35,25 @@
 }
 
 .about {
+  &__title {
+    text-align: center;
+  }
   &__card {
     padding-bottom: 2rem;
+  }
 
+  &__text {
+    letter-spacing: 1px;
+    line-height: 2rem;
+    margin-top: 1rem;
   }
 }
 .homeCreate {
   &__CTA {
     border: 1px solid $primaryGreen;
-    padding: 1rem 2rem;
+    border-radius: 1rem;
+    padding: 2rem 2rem;
+    margin: 2rem;
   }
   &__heading {
     margin-bottom: 1rem;
@@ -52,4 +65,3 @@
     width: 100%;
   }
 }
-
