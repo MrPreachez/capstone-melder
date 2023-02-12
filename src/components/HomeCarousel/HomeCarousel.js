@@ -17,33 +17,57 @@ function HomeCarousel(props) {
   } = usePony({ numItems: allProjects?.length ?? 0 });
 
   return (
-    <div>
-      {/* {allProjects && ( */}
-      <div {...getSectionProps()}>
-        <h1 {...getHeadingProps()}>Explore Some Examples</h1>
-        <h3>learn how it works</h3>
-        <div {...getCarouselWrapperProps()}>
-          <ul {...getCarouselProps()}>
-            {allProjects.map((project, idx) => (
-              
-                <li key={project.id}{...getCarouselItemProps(idx)}>
-                    <Link to={`/result/${project.id}`}>
-                  <div>Project Name:{project.project_name}</div>
-                  <div>By{project.creator_name}</div>
-                  <div>Question{project.question}</div>
-                  </Link>
-                </li>
-              
-            ))}
-          </ul>
-        </div>
-        <button {...getButtonProps(ActionKind.Previous)}>Previous</button>
-        <button {...getButtonProps(ActionKind.Next)}>Next</button>
-        <div {...getAnnouncerProps()}>
-          <p>{`Item ${state.activeSlideIndex + 1} of ${allProjects.length}`}</p>
-        </div>
+    <div className="carousel__section" {...getSectionProps()}>
+      <div className="carousel__heading--wrap">
+        <h2 className="carousel__heading" {...getHeadingProps()}>
+          Explore Some Examples
+        </h2>
+        <h3 className="carousel__subheading">learn how it works</h3>
       </div>
-      {/* )} */}
+
+      <div className="carousel__project" {...getCarouselWrapperProps()}>
+        <ul className="carousel__list" {...getCarouselProps()}>
+          {allProjects.map((project, idx) => (
+            <li
+              className="carousel__card"
+              key={project.id}
+              {...getCarouselItemProps(idx)}
+            >
+              <Link className="carousel__link" to={`/result/${project.id}`}>
+                <div className="carousel__border">
+                  <div className="card__projectName">
+                    Project Name: {project.project_name}
+                  </div>
+                  <div className="card__creatorName">
+                    By: {project.creator_name}
+                  </div>
+                  <div className="card__question">
+                    Question: {project.question}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="carousel__btn--container">
+        <button
+          className="carousel__btn carousel__btn--previous"
+          {...getButtonProps(ActionKind.Previous)}
+        >
+          Previous
+        </button>
+        <button
+          className="carousel__btn carousel__btn--next"
+          {...getButtonProps(ActionKind.Next)}
+        >
+          Next
+        </button>
+      </div>
+
+      <div {...getAnnouncerProps()}>
+        <p>{`Item ${state.activeSlideIndex + 1} of ${allProjects.length}`}</p>
+      </div>
     </div>
   );
 }

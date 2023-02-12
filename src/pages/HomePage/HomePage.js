@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import HomeCarousel from "../../components/HomeCarousel/HomeCarousel";
 import "./HomePage.scss";
 
-
 function HomePage() {
   const [allProjects, setAllProjects] = useState(null);
 
@@ -24,7 +23,6 @@ function HomePage() {
     getAllProjects();
   }, []);
 
-  
   return (
     <main className="section__homePage">
       <section className="hero__section">
@@ -72,23 +70,10 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="list__card">
-          <h2 className="list__title">Explore Some Past Melder's</h2>
-          <div>
-            <ul className="list__group">
-              <li>
-                {/* <p>{allProjects.project_name}</p> */}
-                <p>Question</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <section className="list__card">
+          {allProjects && <HomeCarousel allProjects={allProjects} />}
+        </section>
       </section>
-      <div>
-        {allProjects && <HomeCarousel allProjects={allProjects} />}
-      </div>
-      
-
     </main>
   );
 }
