@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import CreateProject from './pages/CreateProject/CreateProject';
 import AddInput from './pages/AddInput/AddInput';
 import Result from './pages/Results/Results';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/input/:projectID" element={<AddInput />}/>
         <Route path="/result/:projectID" element={<Result />} /> 
       </Routes>
+      <Footer/>
       </BrowserRouter>
 
     </div>

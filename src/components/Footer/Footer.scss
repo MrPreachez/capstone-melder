@@ -1,0 +1,50 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/reset";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+
+.footer {
+    &__section{
+        width:100%;
+        height: auto vh;
+        background-color: #4f4d4a;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__container {
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
+    }
+    &__logo{
+        font-family: Monoton;
+        text-decoration: underline $primaryGreen;
+        font-weight: 400;
+        font-size:2.6rem;
+        margin:2rem 0 0 4rem; 
+    }
+    &__homeLink {
+        flex-grow:1;
+        text-decoration: none;
+        color:$secondaryoffWhite; 
+    }
+    &__details--wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem 4rem;
+        color:$secondaryoffWhite;
+    }
+    &__name{
+        font-size: 1rem;
+    }
+    &__git{
+        font-size: 1rem;
+    }
+    &__linkedIn{
+        font-size: 1.2rem;
+    }
+}
