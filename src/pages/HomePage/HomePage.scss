@@ -35,8 +35,20 @@
 }
 
 .about {
+  &__title--container{
+    width:max-content;
+    display:flex;
+    flex-direction: column;
+  }
   &__title {
-    text-align: center;
+    text-decoration: underline solid $secondaryOrange;
+    margin:1rem;
+
+  }
+  &__title3{
+    text-decoration: underline solid $primaryGreen;
+    margin:1rem;
+
   }
   &__card {
     padding-bottom: 2rem;

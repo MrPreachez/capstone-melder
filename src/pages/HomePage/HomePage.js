@@ -38,13 +38,12 @@ function HomePage() {
       <section className="card__section">
         <div className="card__section--layout">
           <div className="about__card">
-            <h2 className="about__title">
-              Ask your question
-              <br />
-              Gather Feedback
-              <br />
-              And let Melder do the rest
-            </h2>
+            <div className="about__title--container">
+              <h2 className="about__title">Build Your Form /</h2>
+              <h2 className="about__title">Gather Feedback /</h2>
+              <h2 className="about__title3">And Let Melder Do the Rest</h2>
+            </div>
+
             <p className="about__text">
               The idea behind MELDER is to harness the support of AI in the
               processing of group qualitative feedback and opinion. The name
