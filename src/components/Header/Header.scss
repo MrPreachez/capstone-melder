@@ -1,0 +1,42 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/reset";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+
+.header {
+    &__section{
+        width:100%;
+        height: 6rem;
+        background-color: $secondaryoffWhite;
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+    }
+    &__logo{
+        
+        font-family: Monoton;
+        font-weight: 400;
+        font-size:2.6rem;
+        margin:2rem 0 0 2rem;
+        
+    }
+    &__homeLink {
+        flex-grow:1;
+        text-decoration: none;
+        color:$primaryGreen; 
+    }
+    &__login {
+        font-size: 1.8rem;
+        margin: 2rem 0;
+    }
+    &__signUp {
+        font-size: 1.8rem;
+        margin:2rem 2rem 0 2rem;
+    }
+}

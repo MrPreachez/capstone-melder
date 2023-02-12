@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
+import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import CreateProject from './pages/CreateProject/CreateProject';
 import AddInput from './pages/AddInput/AddInput';
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/create" element={<CreateProject />}/>
