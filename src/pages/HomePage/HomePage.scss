@@ -16,11 +16,11 @@
   &__head {
     width: 28rem;
   }
-  &__title {
-    font-family: $font-stackB;
-    font-weight: 400;
-    font-size: 5rem;
-  }
+  // &__title {
+  //   font-family: $font-stackB;
+  //   font-weight: 400;
+  //   font-size: 5rem;
+  // }
 }
 .card {
   &__section {
@@ -48,7 +48,7 @@
 
   }
   &__title3{
-    text-decoration: underline solid $primaryGreen;
+    color: $primaryGreen;
     margin:1rem;
 
   }

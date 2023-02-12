@@ -28,12 +28,10 @@ function HomePage() {
   return (
     <main className="section__homePage">
       <section className="hero__section">
+     
         <div className="hero__head">
-          {/* <h2>Hi! I'm</h2>
-          <h1 className="hero__title">MELDER</h1>
-          <h2 className="hero__subheading">
-            Let's bring minds together
-          </h2> */}
+        
+
           <HeroTypewriter/>
         </div>
       </section>
