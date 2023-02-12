@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HeroTypewriter from "../../components/HeroTypewriter/HeroTypewriter";
 import HomeCarousel from "../../components/HomeCarousel/HomeCarousel";
+
 import "./HomePage.scss";
 
 function HomePage() {
@@ -27,11 +29,12 @@ function HomePage() {
     <main className="section__homePage">
       <section className="hero__section">
         <div className="hero__head">
-          <h2>Hi! I'm</h2>
+          {/* <h2>Hi! I'm</h2>
           <h1 className="hero__title">MELDER</h1>
           <h2 className="hero__subheading">
-            Together, we can bring minds together
-          </h2>
+            Let's bring minds together
+          </h2> */}
+          <HeroTypewriter/>
         </div>
       </section>
 
@@ -41,7 +44,7 @@ function HomePage() {
             <div className="about__title--container">
               <h2 className="about__title">Build Your Form /</h2>
               <h2 className="about__title">Gather Feedback /</h2>
-              <h2 className="about__title3">And Let Melder Do the Rest</h2>
+              <h2 className="about__title3">Let Melder Do the Rest</h2>
             </div>
 
             <p className="about__text">
@@ -61,7 +64,7 @@ function HomePage() {
           <div className="homeCreate__CTA">
             <h3 className="homeCreate__heading">What's your question?</h3>
             <h4 className="homeCreate__subheading">
-              Creating Your own Melder Project is simple!{" "}
+              Creating Your own Melder Project is simple!
             </h4>
             <Link to="/create">
               <button className="homeCreate__CTA--button">Create Now</button>

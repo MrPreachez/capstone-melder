@@ -11,9 +11,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow:.5rem .4rem .4rem $secondaryMercury;
   }
   &__head {
-    width: 24rem;
+    width: 28rem;
   }
   &__title {
     font-family: $font-stackB;
@@ -24,6 +25,7 @@
 .card {
   &__section {
     padding: 2rem 1rem;
+    
 
     &__section--layout {
       @include tablet {
@@ -41,7 +43,7 @@
     flex-direction: column;
   }
   &__title {
-    text-decoration: underline solid $secondaryOrange;
+    // text-decoration: underline solid $secondaryOrange;
     margin:1rem;
 
   }
@@ -66,6 +68,7 @@
     border-radius: 1rem;
     padding: 2rem 2rem;
     margin: 2rem;
+    box-shadow:.5rem .4rem .4rem $secondaryMercury ;
   }
   &__heading {
     margin-bottom: 1rem;
@@ -75,11 +78,14 @@
   }
   &__CTA--button {
     width: 100%;
+    box-shadow:.5rem .4rem .4rem $secondaryMercury ;
   }
 }
 .list{
   &__card{
     width: 100%;
-    margin:0 auto;
+    border-top: 1px solid $primarySilver; 
+    margin-top: 4rem;
+    padding:4rem;   
   }
 }

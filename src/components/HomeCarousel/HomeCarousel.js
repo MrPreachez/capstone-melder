@@ -20,9 +20,9 @@ function HomeCarousel(props) {
     <div className="carousel__section" {...getSectionProps()}>
       <div className="carousel__heading--wrap">
         <h2 className="carousel__heading" {...getHeadingProps()}>
-          Explore Some Examples
+          Peruse Previous Melds
         </h2>
-        <h3 className="carousel__subheading">learn how it works</h3>
+        <h3 className="carousel__subheading">Get a Feel For What's Possible by Looking at These Examples</h3>
       </div>
 
       <div className="carousel__project" {...getCarouselWrapperProps()}>
