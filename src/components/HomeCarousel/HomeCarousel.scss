@@ -23,7 +23,9 @@
         border: 1px solid $primarySilver;
         border-radius: 1rem;
         box-shadow:.5rem .4rem .4rem $secondaryMercury ;
-        height: 16rem;
+        min-height: 14rem;
+        max-height: auto;
+        min-width: 18rem;
         padding:2rem;
         margin:2rem;  
         background-color: $secondaryoffWhite;

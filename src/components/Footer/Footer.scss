@@ -40,15 +40,20 @@
 
     @include tablet {
         align-items: flex-end;
+        font-size:1.4rem;
     }
   }
   &__name {
     font-size: 1rem;
+
   }
   &__git {
     font-size: 1rem;
+
   }
   &__linkedIn {
     font-size: 1.2rem;
+
+   
   }
 }

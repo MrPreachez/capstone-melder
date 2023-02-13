@@ -27,6 +27,7 @@ function HomePage() {
 
   return (
     <main className="section__homePage">
+      <div className="section__homePage--wrapper">
       <section className="hero__section">
      
         <div className="hero__head">
@@ -74,6 +75,7 @@ function HomePage() {
           {allProjects && <HomeCarousel allProjects={allProjects} />}
         </section>
       </section>
+      </div>
     </main>
   );
 }

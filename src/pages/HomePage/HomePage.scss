@@ -6,11 +6,17 @@
 
 .section__homePage {
   margin: 0 auto;
-  width: $maxContentWidth;
+  max-width: $maxContentWidth;
+
+  &__homePage--wrapper {
+    padding:1rem;
+    width: 100vw;
+  }
 }
 .hero {
   &__section {
     height: 24rem;
+    // width: 100vw;
     background-image: url("../../assets/images/MelderBG.jpg");
     display: flex;
     justify-content: center;
@@ -29,6 +35,7 @@
 .card {
   &__section {
     padding: 2rem 1rem;
+    // width: 100vw;
 
     &__section--layout {
       @include tablet {
@@ -67,8 +74,8 @@
   &__CTA {
     border: 1px solid $primaryGreen;
     border-radius: 1rem;
-    padding: 2rem 2rem;
-    margin: 2rem;
+    padding: 2rem;
+    margin: 1rem;
   }
   &__heading {
     margin-bottom: 1rem;
@@ -85,6 +92,5 @@
     width: 100%;
     border-top: 1px solid $primarySilver;
     margin-top: 4rem;
-    padding: 4rem;
   }
 }
