@@ -5,75 +5,86 @@
 @use "../../styles/partials/variables" as *;
 
 .carousel {
-    &__section {
-        
-    }
-    // &__project {
-    //     display:flex;
-    //     flex-direction: row;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
-    
+  &__section {
+  }
+  // &__project {
+  //     display:flex;
+  //     flex-direction: row;
+  //     justify-content: center;
+  //     align-items: center;
+  // }
 
-    &__list {
-        
-    }
-    &__border {
-        border: 1px solid $primarySilver;
-        border-radius: 1rem;
-        box-shadow:.5rem .4rem .4rem $secondaryMercury ;
-        min-height: 14rem;
-        max-height: auto;
-        min-width: 18rem;
-        padding:2rem;
-        margin:2rem;  
-        background-color: $secondaryoffWhite;
-    }
+  &__list {
+  }
+  &__border {
+    border: 1px solid $primarySilver;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
+    min-height: 14rem;
+    max-height: auto;
+    min-width: 18rem;
+    padding: 2rem;
+    margin: 2rem 2rem 0 2rem;
+    background-color: $secondaryoffWhite;
+  }
 
-    &__link {
-        text-decoration: none;
-        color:black;
-    }
-    &__card {
-        justify-content: space-around;
-    }
-    &__heading--wrap{
-        display:flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    &__subheading{
-        font-size: 1.8rem;
-    }
-    &__btn--container{
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    &__btn {
-        width:12rem;
-        height:4rem;
-        margin:2rem;
-        box-shadow:.5rem .4rem .4rem $secondaryMercury ;
-    }
-   
+  &__link {
+    text-decoration: none;
+    color: black;
+
+    // max-height: auto;
+    margin-bottom: 2rem;
+  }
+  &__card {
+    justify-content: space-around;
+  }
+  &__heading--wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__heading {
+    margin: 2rem 0 1rem 0;
+    font-size: 2.6rem;
+  }
+  &__subheading {
+    font-size: 1.8rem;
+  }
+  &__btn--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    width: 12rem;
+    height: 4rem;
+    margin: 0 2rem 2rem 2rem;
+    box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
+  }
 }
 .card {
-    &__projectName {
-       font-size: 2rem;
-       font-weight: 600;
-       line-height: 2.8rem;
-       margin-bottom: .5rem;
-    }
-    &__creatorName {
-        margin-bottom: 2rem;
-    }
-    &__question {
-        font-size:1.8rem;
-        font-weight:600;
-
-    }
+  &__projectName {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+  &__creatorName {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+  &__question {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }

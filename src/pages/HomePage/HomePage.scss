@@ -9,7 +9,7 @@
   max-width: $maxContentWidth;
 
   &__homePage--wrapper {
-    padding:1rem;
+    padding: 1rem;
     width: 100vw;
   }
 }
@@ -22,6 +22,10 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
+
+    @include tablet {
+      height: 32rem;
+    }
   }
   &__head {
     width: 28rem;
@@ -74,6 +78,7 @@
   &__CTA {
     border: 1px solid $primaryGreen;
     border-radius: 1rem;
+    box-shadow: $shadow;
     padding: 2rem;
     margin: 1rem;
   }

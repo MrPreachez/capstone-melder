@@ -86,7 +86,7 @@ function Result() {
       <section className="result__pageWrap">
         <section className="result__head">
           <h2 className="result__heading">
-            {currentProject.project_name} Meld
+            {currentProject.project_name} Melder
           </h2>
 
           <h3 className="result__question">

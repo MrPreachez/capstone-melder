@@ -39,21 +39,30 @@
     color: $secondaryoffWhite;
 
     @include tablet {
-        align-items: flex-end;
-        font-size:1.4rem;
+      align-items: flex-end;
     }
   }
   &__name {
     font-size: 1rem;
 
+    @include tablet {
+      font-size: 1.4rem;
+    }
   }
   &__git {
     font-size: 1rem;
-
+    text-decoration: underline $secondaryOrange;
+    color: $secondaryoffWhite;
+    @include tablet {
+      font-size: 1.4rem;
+    }
   }
   &__linkedIn {
     font-size: 1.2rem;
-
-   
+    text-decoration: underline $secondaryOrange;
+    color: $secondaryoffWhite;
+    @include tablet {
+      font-size: 1.4rem;
+    }
   }
 }

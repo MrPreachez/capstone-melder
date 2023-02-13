@@ -20,9 +20,11 @@ function HomeCarousel(props) {
     <div className="carousel__section" {...getSectionProps()}>
       <div className="carousel__heading--wrap">
         <h2 className="carousel__heading" {...getHeadingProps()}>
-          Peruse Previous Melds
+          Peruse Previous Melders
         </h2>
-        <h3 className="carousel__subheading">Get a Feel For What's Possible by Looking at These Examples</h3>
+        <h3 className="carousel__subheading">
+          Get a Sense of the Possibilities
+        </h3>
       </div>
 
       <div className="carousel__project" {...getCarouselWrapperProps()}>
@@ -36,13 +38,16 @@ function HomeCarousel(props) {
               <Link className="carousel__link" to={`/result/${project.id}`}>
                 <div className="carousel__border">
                   <div className="card__projectName">
-                    Project Name: {project.project_name}
+                    <span className="card__text">Project: </span>
+                    {project.project_name}
                   </div>
                   <div className="card__creatorName">
-                    By: {project.creator_name}
+                    <span className="card__text">Created By: </span>
+                    {project.creator_name}
                   </div>
                   <div className="card__question">
-                    Question: {project.question}
+                    <span className="card__text">Question: </span>
+                    {project.question}
                   </div>
                 </div>
               </Link>
