@@ -19,13 +19,15 @@
         align-items: center;
     }
     &__formBorder {
-        border: 1px solid $primarySilver;
+        border: 1px solid $primaryGreen;
         border-radius: 1rem;
         padding:2rem;
+        box-shadow:.5rem .4rem .4rem $secondaryMercury;
     }
     &__CTA--button{
         width:100%;
-        margin-top: 2rem;
+        margin: 4rem 0 4rem 0;
+
     }
 }
 
@@ -34,6 +36,9 @@
         font-size: 4rem;
         line-height: 4.4rem;
         width: 24rem;
+    }
+    &__title--color{
+        color:$primaryGreen;
     }
     &__subhead {
         margin:1rem 0 2rem 0;
@@ -48,6 +53,11 @@
         margin-bottom: 1rem;
         font-size: 1.8rem;
     }
+    &__stepsNums{
+        font-weight: 600;
+        color:$secondaryOrange;
+
+    }
     &__text {
         margin:2rem;
     }
@@ -56,24 +66,25 @@
     &__field {
         display: flex;
         flex-direction: column;
+        margin-bottom: 1.8rem;
 
     }
-    &__field1 {
-        margin-bottom: 1rem;
-    }
+
     &__inputA {
         height:3.6rem;
         padding:0 1.6rem;
         background-color: $secondaryoffWhite;
         border: 1px solid $primarySilver;
-        border-radius: 2rem;
+        border-radius: 1rem;
         outline:none;
         font-family: $font-stack;
+        box-shadow:.5rem .4rem .4rem $secondaryMercury;
     }
     &__inputB {
         @extend .addProject__inputA;
             height: 10rem;
-            padding: 1rem 1.6rem;      
+            padding: 1rem 1.6rem; 
+            box-shadow:.5rem .4rem .4rem $secondaryMercury;     
     }
     
 }

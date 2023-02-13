@@ -11,9 +11,9 @@ function CreateProject() {
     const project_name = e.target.project.value;
     const response_type = e.target.type.value;
     const question = e.target.question.value;
-    console.log(e.target.type.value)
+    console.log(e.target.type.value);
     console.log(creator_name, project_name, response_type, question);
-    if (!creator_name || !project_name || !question || !response_type ) {
+    if (!creator_name || !project_name || !question || !response_type) {
       alert("Please fill in all fields to submit your project");
     } else {
       try {
@@ -47,19 +47,27 @@ function CreateProject() {
     <main className="section section__createPage">
       <section className="create__head">
         <div className="create__banner">
-          <h1 className="head__title">Let's Create Your Project!</h1>
+          <h1 className="head__title">Let's Create Your <span className="head__title--color">Melder! </span></h1>
         </div>
 
-        <h2 className="head__subhead">Building a MELDER is simple!</h2>
+        <h2 className="head__subhead">It's Simple, Just Follow These Steps</h2>
         <ul className="head__list">
           <li className="head__steps head__step1">
-            <span>Step 1:</span> Think of a project name
+            <span className="head__stepsNums">Step 1:</span> Think of a project
+            name
           </li>
           <li className="head__steps head__step2">
-            <span>Step 2:</span> Come up with a thought provoking question
+            <span className="head__stepsNums">Step 2:</span> Come up with a
+            thought provoking question
           </li>
           <li className="head__steps head__step1">
-            <span>Step 3:</span> Fill in the form and press CREATE
+            <span className="head__stepsNums">Step 3:</span> Use this input to
+            let the AI know what type of response you'd like, check out our
+            details below on prompting
+          </li>
+          <li className="head__steps head__step1">
+            <span className="head__stepsNums">Step 4:</span> Fill in the form
+            and press CREATE
           </li>
         </ul>
         <p className="head__text">
@@ -70,7 +78,7 @@ function CreateProject() {
         <form className="addProject" onSubmit={handleSubmit}>
           <div className="create__formBorder">
             <div className="addProject__field addProject__field1">
-              <label className="addProject__label-A">PROJECT NAME</label>
+              <label className="addProject__label-A">OWNER NAME</label>
 
               <input
                 className="addProject__inputA"
@@ -80,7 +88,7 @@ function CreateProject() {
                 placeholder="Full Name"
               />
             </div>
-            <div className="addProject__field addProject__field1">
+            <div className="addProject__field addProject__field2">
               <label className="addProject__label-A">PROJECT NAME</label>
 
               <input
@@ -92,9 +100,7 @@ function CreateProject() {
               />
             </div>
             <div className="addProject__field addProject__field2">
-              <label className="addProject__label-B">
-                Type of response
-              </label>
+              <label className="addProject__label-B">TYPE OF RESPONSE</label>
 
               <textarea
                 className="addProject__inputB"
@@ -117,7 +123,6 @@ function CreateProject() {
               ></textarea>
             </div>
           </div>
-
           <button className="create__CTA--button">create</button>
         </form>
       </section>
