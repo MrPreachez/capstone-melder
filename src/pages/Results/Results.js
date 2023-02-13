@@ -36,6 +36,21 @@ function Result() {
     getProject();
   }, [projectID]);
 
+  // useEffect(() => {
+  //   const getAllProjectData = async () => {
+  //     try {
+  //       const { data } = await axios.get(
+  //     `${process.env.REACT_APP_URL}/project/${projectID}/result`
+  //       );
+  //       setCurrentResult(data);
+  //       setCurrentProject(data)
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getAllProjectData();
+  // },[projectID])
+
   if (!currentResult && !currentProject) {
     return (
       <div>
