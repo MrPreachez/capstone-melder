@@ -9,25 +9,24 @@
     &__section{
         width:100%;
         height: auto;
-        background-color: #4f4d4a;
-        // #2b2925;
+        background-color: #4f4d4a;  
+    }
+    &__container--limit {
+        margin: 0 auto;
+        max-width:$maxContentWidth;
     }
     &__container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        
-
     }
     &__logo{
-        
         font-family: Monoton;
         font-weight: 400;
         font-size:2.6rem;
         margin:2rem 0 0 2rem;
-        text-decoration: underline $primaryGreen;
-        
+        text-decoration: underline $primaryGreen;    
     }
     &__homeLink {
         flex-grow:1;
@@ -38,7 +37,6 @@
         font-size: 1.8rem;
         margin: 2rem 0;
         color: white;
-
     }
     &__signUp {
         font-size: 1.8rem;

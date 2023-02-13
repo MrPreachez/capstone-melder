@@ -4,6 +4,10 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
 
+.section__homePage {
+  margin: 0 auto;
+  width: $maxContentWidth;
+}
 .hero {
   &__section {
     height: 24rem;
@@ -11,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow:.5rem .4rem .4rem $secondaryMercury;
+    box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
   }
   &__head {
     width: 28rem;
@@ -25,7 +29,6 @@
 .card {
   &__section {
     padding: 2rem 1rem;
-    
 
     &__section--layout {
       @include tablet {
@@ -37,20 +40,18 @@
 }
 
 .about {
-  &__title--container{
-    width:max-content;
-    display:flex;
+  &__title--container {
+    width: max-content;
+    display: flex;
     flex-direction: column;
   }
   &__title {
     // text-decoration: underline solid $secondaryOrange;
-    margin:1rem;
-
+    margin: 1rem;
   }
-  &__title3{
+  &__title3 {
     color: $primaryGreen;
-    margin:1rem;
-
+    margin: 1rem;
   }
   &__card {
     padding-bottom: 2rem;
@@ -68,7 +69,6 @@
     border-radius: 1rem;
     padding: 2rem 2rem;
     margin: 2rem;
-    
   }
   &__heading {
     margin-bottom: 1rem;
@@ -78,14 +78,13 @@
   }
   &__CTA--button {
     width: 100%;
-    
   }
 }
-.list{
-  &__card{
+.list {
+  &__card {
     width: 100%;
-    border-top: 1px solid $primarySilver; 
+    border-top: 1px solid $primarySilver;
     margin-top: 4rem;
-    padding:4rem;   
+    padding: 4rem;
   }
 }

@@ -22,8 +22,6 @@ function AddInput() {
     getProject();
   }, [projectID]);
 
-
-
   if (!currentProject) {
     return (
       <div>
@@ -67,72 +65,79 @@ function AddInput() {
     e.preventDefault();
 
     try {
-        const response = await axios.post(
-          `${process.env.REACT_APP_URL}/project/${projectID}`
+      const response = await axios.post(
+        `${process.env.REACT_APP_URL}/project/${projectID}`
+      );
+      if (response.status === 200) {
+        alert(
+          `The ${currentProject.project_name} Melder has been submitted, you'll now be directed to your generated result`
         );
-        if (response.status === 200) {
-            alert(
-            `The ${currentProject.project_name} Melder has been submitted, you'll now be directed to your generated result`
-            );
-            navigate(`/result/${projectID}`);
-        } else if (response.status === 400){
-            alert("There was an error generating your request.  Sorry! ")
-        }
+        navigate(`/result/${projectID}`);
+      } else if (response.status === 400) {
+        alert("There was an error generating your request.  Sorry! ");
+      }
     } catch (error) {
-        console.error(error);
-        alert("An error occurred while submitting the project. Please try again later.");
+      console.error(error);
+      alert(
+        "An error occurred while submitting the project. Please try again later."
+      );
     }
-}
+  }
 
   return (
     <main className="section section__inputPage">
-      <section className="input__head">
-        <div className="input__banner">
-          <h1 className="input__heading">
-            Welcome, to the {currentProject.project_name} Melder,
-          </h1>
-        </div>
-        <div className="input__subhead">
-          <h3 className="input__subheadingA">
-            Your response to the following questionaire has been requested by{" "}
-            {currentProject.creator_name}
-          </h3>
+      <section className="input__pageWrap">
+        <section className="input__head">
+          <div className="input__banner">
+            <h1 className="input__heading">
+              Welcome, to the {currentProject.project_name}
+              <span className="input__heading--color">Melder</span>!
+            </h1>
+          </div>
+          <div className="input__subtext">
+            <h4 className="input__subheadingA">
+              Your response to the following questionaire has been requested by{" "}
+              {currentProject.creator_name}
+            </h4>
+            <h3 className="addResponse__question">{currentProject.question}</h3>
+          </div>
           <p className="input__subheadingB">
             Please take a moment to consider the question carefully before
             submitting.
           </p>
-        </div>
-      </section>
-      <div className="addResponse__question">
-        <p className="addResponse__display">{currentProject.question}</p>
-      </div>
+        </section>
+        <section className="input__form">
+          <form className="addResponse__form" onSubmit={inputSubmit}>
+            <div className="addResponse__formBorder">
+              <label className="addResponse__label">ENTER YOUR NAME</label>
+              <input
+                className="addResponse__name"
+                type="text"
+                name="respondent"
+                placeholder="Type name here"
+              />
+              <label className="addResponse__label">ENTER RESPONSE</label>
+              <textarea
+                className="addResponse__input"
+                name="response"
+                placeholder="Type Response Here"
+              ></textarea>
+            </div>
 
-      <section className="input__form">
-        <form className="addResponse__form" onSubmit={inputSubmit}>
-          <div className="addResponse__formBorder">
-            <label className="addResponse__label">ENTER YOUR NAME</label>
-            <input
-              className="addResponse__name"
-              type="text"
-              name="respondent"
-              placeholder="Type name here"
-            />
-            <textarea
-              className="addResponse__input"
-              name="response"
-              placeholder="Enter your response here"
-            ></textarea>
-          </div>
-
-          <button className="addResponse__CTA--button" >Submit Response</button>
-          <div className="input__CTA">
-            <p className="input__submitText">
-              When all your responses have been gathered, submit the project and
-              await your summary
-            </p>
-            <button className="input__CTA--button"onClick={projectSubmit}>Submit Project</button>
-          </div>
-        </form>
+            <button className="addResponse__CTA--button">
+              Submit Response
+            </button>
+            <div className="input__CTA">
+              <p className="input__submitText">
+                When all your responses have been gathered, submit the project
+                and await your summary
+              </p>
+              <button className="input__CTA--button" onClick={projectSubmit}>
+                Submit Project
+              </button>
+            </div>
+          </form>
+        </section>
       </section>
     </main>
   );

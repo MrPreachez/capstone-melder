@@ -4,20 +4,22 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
 
-.section {
-  width: 100%;
-  padding: 1rem;
+.section__resultPage {
+  max-width: $maxContentWidth;
   margin: 0 auto;
 }
 
 .result {
+  &__pageWrap {
+    width: 100%;
+    padding: 1rem;
+  }
   &__head {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
   &__heading {
     font-size: 4rem;
     font-weight: 800;
@@ -25,7 +27,6 @@
     padding: 2rem;
     margin-top: 2rem;
   }
-
   &__subheading {
     color: $primaryGreen;
     padding: 2rem;
@@ -41,7 +42,6 @@
     padding: 1rem;
     color: $primarySilver;
   }
-
   &__generate {
     width: 100%;
     min-height: auto;
@@ -57,11 +57,11 @@
     font-weight: 600;
   }
 }
+
 .inputs {
   &__container {
     padding: 2rem 0 2rem 0;
   }
-
   &__card {
     border: 1px solid $primaryBlack;
     border-radius: 4px;
@@ -73,6 +73,7 @@
     padding: 2rem 0 1rem 0;
   }
 }
+
 .link {
   text-decoration: underline $secondaryOrange;
   color: $primaryGreen;
