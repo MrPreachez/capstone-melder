@@ -14,6 +14,10 @@
   &__pageWrap {
     padding: 1rem;
     width: 100%;
+
+    @include tablet {
+      padding: 2rem;
+    }
   }
   &__banner {
     height: 20rem;
@@ -41,11 +45,20 @@
   &__subheadingB {
     padding: 1rem;
   }
+  &__CTA--wrapperB {
+    display: flex;
+    justify-content: center;
+  }
   &__CTA {
     border: 1px solid $secondaryOrange;
     border-radius: 1rem;
     padding: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0 2rem 0;
+
+    @include tablet {
+      margin: 4rem 0 4rem 0;
+      width: 80%;
+    }
   }
   &__CTA--button {
     width: 100%;
@@ -53,6 +66,7 @@
   &__submitText {
     color: $secondaryOrange;
     padding: 1rem;
+    font-weight: 600;
   }
 }
 .addResponse {
@@ -69,6 +83,10 @@
     border-radius: 1rem;
     padding: 1.4rem;
     box-shadow: $shadow;
+
+    @include tablet {
+      padding: 2rem;
+    }
   }
   &__display {
     font-size: 2.4rem;
@@ -99,5 +117,15 @@
   &__CTA--button {
     width: 100%;
     margin-top: 2rem;
+
+    @include tablet {
+      width: 18rem;
+    }
+  }
+  &__CTA--wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }

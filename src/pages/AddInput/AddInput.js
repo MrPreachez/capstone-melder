@@ -123,18 +123,21 @@ function AddInput() {
                 placeholder="Type Response Here"
               ></textarea>
             </div>
-
-            <button className="addResponse__CTA--button">
-              Submit Response
-            </button>
-            <div className="input__CTA">
-              <p className="input__submitText">
-                When all your responses have been gathered, submit the project
-                and await your summary
-              </p>
-              <button className="input__CTA--button" onClick={projectSubmit}>
-                Submit Project
+            <div className="addResponse__CTA--wrapper">
+              <button className="addResponse__CTA--button">
+                Submit Response
               </button>
+            </div>
+            <div className="input__CTA--wrapperB">
+              <div className="input__CTA">
+                <p className="input__submitText">
+                  Submit form after all responses have been gathered. You will
+                  be directerd to Melder's Result.
+                </p>
+                <button className="input__CTA--button" onClick={projectSubmit}>
+                  Submit Project
+                </button>
+              </div>
             </div>
           </form>
         </section>

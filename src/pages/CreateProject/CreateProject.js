@@ -67,9 +67,9 @@ function CreateProject() {
               thought provoking question
             </li>
             <li className="head__steps head__step1">
-              <span className="head__stepsNums">Step 3:</span> Use this input to
-              let the AI know what type of response you'd like, check out our
-              details below on prompting
+              <span className="head__stepsNums">Step 3:</span> Create a prompt,
+              this tells Melder what kind of response you want. Check out the
+              details below on Prompts.
             </li>
             <li className="head__steps head__step1">
               <span className="head__stepsNums">Step 4:</span> Fill in the form
@@ -129,8 +129,21 @@ function CreateProject() {
                 ></textarea>
               </div>
             </div>
-            <button className="create__CTA--button">create</button>
+            <div className="create__CTA--wrapper">
+              <button className="create__CTA--button">create</button>
+            </div>
           </form>
+          <section className="prompts__container">
+            <h3 className="prompts__heading">Prompts</h3>
+            <p className="prompts__text">
+              The prompt input is where you can structure the type of response
+              you would like to get back. The prompt you set should be
+              instructional with clear details of what you are expecting, i.e.
+              summarize sentiment, highlight common points and offer a touch
+              light hearted humor where appropriate. Keep the language simple,
+              direct and specific.
+            </p>
+          </section>
         </section>
       </section>
     </main>

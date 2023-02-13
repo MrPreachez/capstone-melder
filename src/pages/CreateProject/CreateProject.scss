@@ -15,6 +15,10 @@
   &__pageWrap {
     width: 100%;
     padding: 1rem;
+
+    @include tablet {
+      padding: 2rem;
+    }
   }
   &__banner {
     height: 20rem;
@@ -27,10 +31,24 @@
     border-radius: 1rem;
     padding: 1.4rem;
     box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
+
+    @include tablet {
+      padding: 2rem;
+    }
   }
   &__CTA--button {
     width: 100%;
     margin: 4rem 0 4rem 0;
+
+    @include tablet {
+      width: 18rem;
+    }
+  }
+  &__CTA--wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 
@@ -82,8 +100,13 @@
   }
   &__inputB {
     @extend .addProject__inputA;
-    height: 10rem;
+    height: 8rem;
     padding: 1rem 1.6rem;
     box-shadow: 0.5rem 0.4rem 0.4rem $secondaryMercury;
+  }
+}
+.prompts {
+  &__container {
+    margin: 2rem 0 2rem 0;
   }
 }
