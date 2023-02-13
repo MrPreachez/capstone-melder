@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Results.scss";
+import ResultTypewriter from "../../components/ResultTypewriter/ResultTypewriter";
 
 function Result() {
   const { projectID } = useParams();
@@ -73,7 +74,7 @@ function Result() {
 
   if (!currentResult && !currentProject && !currentResponses) {
     return (
-      <div>
+      <div className="loading__text">
         Hmm... something doesn't seem write. Please come back later if the page
         does not load shortly
       </div>
@@ -96,7 +97,7 @@ function Result() {
         </section>
         <label className="result__label">GENERATED RESULT FROM MELDER</label>
         <section className="result__generate">
-          <p className="result__generate--text">{currentResult.result}</p>
+          <span className="result__generate--text"><ResultTypewriter result={currentResult.result} /></span>
         </section>
         <section className="inputs__container">
           <div className="inputs__list">

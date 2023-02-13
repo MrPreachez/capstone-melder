@@ -1,0 +1,14 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/reset";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+.typewriter__resultPage {
+    font-size: 1.8;
+    font-family: $font-stack;
+    
+    @include tablet {
+        font-size: 2rem;
+    }
+}
