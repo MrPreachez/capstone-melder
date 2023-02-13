@@ -7,51 +7,71 @@ function Result() {
   const { projectID } = useParams();
   const [currentResult, setCurrentResult] = useState(null);
   const [currentProject, setCurrentProject] = useState(null);
+  const [currentResponses, setCurrentResponses] = useState(null);
 
   useEffect(() => {
-    const getResult = async () => {
+    const getAllProjectData = async () => {
       try {
-        const { data } = await axios.get(
-          `${process.env.REACT_APP_URL}/project/${projectID}/result`
-        );
-        setCurrentResult(data);
+        const [resultRes, projectRes, responsesRes] = await Promise.all([
+          axios.get(`${process.env.REACT_APP_URL}/project/${projectID}/result`),
+          axios.get(`${process.env.REACT_APP_URL}/project/${projectID}`),
+          axios.get(`${process.env.REACT_APP_URL}/responses/${projectID}`),
+        ]);
+
+        setCurrentResult(resultRes.data);
+        setCurrentProject(projectRes.data);
+        setCurrentResponses(responsesRes.data);
       } catch (error) {
         console.error(error);
       }
     };
-    getResult();
-  }, [projectID]);
 
-  useEffect(() => {
-    const getProject = async () => {
-      try {
-        const { data } = await axios.get(
-          `${process.env.REACT_APP_URL}/project/${projectID}`
-        );
-        setCurrentProject(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getProject();
+    getAllProjectData();
   }, [projectID]);
 
   // useEffect(() => {
-  //   const getAllProjectData = async () => {
+  //   const getResult = async () => {
   //     try {
   //       const { data } = await axios.get(
-  //     `${process.env.REACT_APP_URL}/project/${projectID}/result`
+  //         `${process.env.REACT_APP_URL}/project/${projectID}/result`
   //       );
   //       setCurrentResult(data);
-  //       setCurrentProject(data)
   //     } catch (error) {
   //       console.error(error);
   //     }
   //   };
-  //   getAllProjectData();
-  // },[projectID])
+  //   getResult();
+  // }, [projectID]);
 
-  if (!currentResult && !currentProject) {
+  // useEffect(() => {
+  //   const getProject = async () => {
+  //     try {
+  //       const { data } = await axios.get(
+  //         `${process.env.REACT_APP_URL}/project/${projectID}`
+  //       );
+  //       setCurrentProject(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getProject();
+  // }, [projectID]);
+
+  // useEffect(() => {
+  //   const getResponses = async () => {
+  //     try {
+  //       const { data } = await axios.get(
+  //         `${process.env.REACT_APP_URL}/responses/${projectID}`
+  //       );
+  //       setCurrentResponses(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getResponses();
+  // }, [projectID]);
+
+  if (!currentResult && !currentProject && !currentResponses) {
     return (
       <div>
         Hmm... something doesn't seem write. Please come back later if the page
@@ -81,10 +101,19 @@ function Result() {
         <section className="inputs__container">
           <div className="inputs__list">
             <h3 className="inputs__title">Included Inputs</h3>
-            <div className="inputs__card">
-              <p className="inputs__name"> name:{} </p>
-              <p className="inputs__response"> response:{}</p>
-            </div>
+            {currentResponses &&
+              currentResponses.map((respondent, index) => (
+                <div key={index} className="inputs__card">
+                  <p className="inputs__name">
+                    {" "}
+                    name:{respondent.respondent_name}{" "}
+                  </p>
+                  <p className="inputs__response">
+                    {" "}
+                    response:{respondent.response_input}
+                  </p>
+                </div>
+              ))}
           </div>
           <Link className="link" to="/">
             <p className="link__home">RETURN HOME</p>
