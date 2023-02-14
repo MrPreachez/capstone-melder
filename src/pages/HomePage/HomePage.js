@@ -8,7 +8,7 @@ import "./HomePage.scss";
 
 function HomePage() {
   const [allProjects, setAllProjects] = useState(null);
-console.log(env.process.REACT_APP_URL)
+console.log(process.env.REACT_APP_URL)
   useEffect(() => {
     const getAllProjects = async () => {
       try {
