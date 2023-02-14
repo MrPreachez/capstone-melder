@@ -16,7 +16,6 @@
 .hero {
   &__section {
     height: 24rem;
-    // width: 100vw;
     background-image: url("../../assets/images/MelderBG.jpg");
     display: flex;
     justify-content: center;
@@ -30,11 +29,6 @@
   &__head {
     width: 28rem;
   }
-  // &__title {
-  //   font-family: $font-stackB;
-  //   font-weight: 400;
-  //   font-size: 5rem;
-  // }
 }
 .card {
   &__section {

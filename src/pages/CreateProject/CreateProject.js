@@ -11,8 +11,7 @@ function CreateProject() {
     const project_name = e.target.project.value;
     const response_type = e.target.type.value;
     const question = e.target.question.value;
-    console.log(e.target.type.value);
-    console.log(creator_name, project_name, response_type, question);
+
     if (!creator_name || !project_name || !question || !response_type) {
       alert("Please fill in all fields to submit your project");
     } else {
@@ -26,7 +25,6 @@ function CreateProject() {
             question,
           }
         );
-        console.log(response);
         if (response.status === 201) {
           const projectId = response.data.project_id;
           alert(

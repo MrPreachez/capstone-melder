@@ -30,48 +30,6 @@ function Result() {
     getAllProjectData();
   }, [projectID]);
 
-  // useEffect(() => {
-  //   const getResult = async () => {
-  //     try {
-  //       const { data } = await axios.get(
-  //         `${process.env.REACT_APP_URL}/project/${projectID}/result`
-  //       );
-  //       setCurrentResult(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getResult();
-  // }, [projectID]);
-
-  // useEffect(() => {
-  //   const getProject = async () => {
-  //     try {
-  //       const { data } = await axios.get(
-  //         `${process.env.REACT_APP_URL}/project/${projectID}`
-  //       );
-  //       setCurrentProject(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getProject();
-  // }, [projectID]);
-
-  // useEffect(() => {
-  //   const getResponses = async () => {
-  //     try {
-  //       const { data } = await axios.get(
-  //         `${process.env.REACT_APP_URL}/responses/${projectID}`
-  //       );
-  //       setCurrentResponses(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getResponses();
-  // }, [projectID]);
-
   if (!currentResult && !currentProject && !currentResponses) {
     return (
       <div className="loading__text">
@@ -80,7 +38,6 @@ function Result() {
       </div>
     );
   }
-
   return (
     <main className="section section__resultPage">
       <section className="result__pageWrap">
@@ -88,16 +45,16 @@ function Result() {
           <h2 className="result__heading">
             {currentProject.project_name} Melder
           </h2>
-
           <h3 className="result__question">
             Question: {currentProject.question}
           </h3>
-
           <h3 className="result__subheading">Melder has spoken!</h3>
         </section>
         <label className="result__label">GENERATED RESULT FROM MELDER</label>
         <section className="result__generate">
-          <span className="result__generate--text"><ResultTypewriter result={currentResult.result} /></span>
+          <span className="result__generate--text">
+            <ResultTypewriter result={currentResult.result} />
+          </span>
         </section>
         <section className="inputs__container">
           <div className="inputs__list">

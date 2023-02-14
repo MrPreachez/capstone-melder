@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function HomeCarousel(props) {
   const { allProjects } = props;
-  console.log(allProjects);
   const {
     getSectionProps,
     getHeadingProps,

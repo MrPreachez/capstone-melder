@@ -9,14 +9,12 @@ import "./HomePage.scss";
 function HomePage() {
   const [allProjects, setAllProjects] = useState(null);
 
-  console.log(allProjects);
   useEffect(() => {
     const getAllProjects = async () => {
       try {
         const { data } = await axios.get(
           `${process.env.REACT_APP_URL}/project`
         );
-        console.log(data);
         setAllProjects(data);
       } catch (error) {
         console.error(error);
