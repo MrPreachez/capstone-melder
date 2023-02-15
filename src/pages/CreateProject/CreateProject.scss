@@ -72,6 +72,7 @@
   &__steps {
     margin-bottom: 1rem;
     font-size: 1.8rem;
+    font-weight: 600;
   }
   &__stepsNums {
     font-weight: 600;
@@ -108,5 +109,30 @@
 .prompts {
   &__container {
     margin: 2rem 0 2rem 0;
+
+    @include tablet {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  &__heading {
+    text-decoration: underline $primaryGreen;
+  }
+  &__text {
+    line-height: 2rem;
+  }
+  &__list {
+    margin: 2rem;
+    line-height: 2.2rem;
+    border-top: 1px solid $primaryGreen;
+    border-bottom: 1px solid $primaryGreen;
+    padding: 1rem;
+  }
+  &__item--bold {
+    font-weight: 600;
+    color: $secondaryOrange;
+  }
+  &__lastText {
+    font-weight: 600;
   }
 }

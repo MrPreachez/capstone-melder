@@ -39,7 +39,6 @@ function CreateProject() {
       }
     }
   }
-  //create handler to send form data to
 
   return (
     <main className="section__createPage">
@@ -135,11 +134,48 @@ function CreateProject() {
             <h3 className="prompts__heading">Prompts</h3>
             <p className="prompts__text">
               The prompt input is where you can structure the type of response
-              you would like to get back. The prompt you set should be
-              instructional with clear details of what you are expecting, i.e.
-              summarize sentiment, highlight common points and offer a touch
-              light hearted humor where appropriate. Keep the language simple,
-              direct and specific.
+              you would like to receive from the AI. This includes providing
+              guidance on factors such as the perspective, tone, and any
+              additional suggestions you would like the AI to consider. It's
+              important to consider your prompt carefully and strike a balance
+              between providing enough information for the AI to generate a
+              useful response, while not overloading the prompt with too much
+              information. To help guide you, we've provided a template that can
+              be used as a starting point. Additionally, we recommend that you
+              be clear and concise with your language to ensure that the AI can
+              accurately interpret the prompt. Here's the template:
+            </p>
+            <ul className="prompts__list">
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Context:</span> ie. Survey
+                asking local constituents their opinions on matters of concern
+              </li>
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Question:</span> ie. What
+                are your top concerns for our community in 2023?{" "}
+              </li>
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Reply length:</span> 1000
+                words
+              </li>
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Tone:</span> dry but witty
+              </li>
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Perspective:</span> ie.
+                imagine you are government official reporting on the sentiments
+                of consituents{" "}
+              </li>
+              <li className="prompts__item">
+                <span className="prompts__item--bold">Outcome:</span> ie.
+                summarize key points mentioned, elaborate on challenges and how
+                to find common ground
+              </li>
+            </ul>
+            <p className="prompts__lastText">
+              Remember, the more specific and focused your prompt is, the more
+              likely it is that the AI will generate a response that meets your
+              needs.
             </p>
           </section>
         </section>
