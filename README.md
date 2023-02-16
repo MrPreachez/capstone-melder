@@ -86,6 +86,10 @@ To set up the database tables, run the following commands:
 * mysql: ^2.18.1
 * openai: ^3.1.0
 
+### Open AI Comments 
+The Open AI api has proven to be a bit glitchy at times.  It is important to note, after submitting your melder project, it can take anywhere up to 20seconds before the the api returns a response.  Try not to press the submit button again.  This is an issue that should be fixed in a future deployment.  The following is a block of code that shows the api call.  If the developer wants to play with the responses, the completion points can be adjusted to alter the response.  It is wise to familiarize yourself with the OpenAI docs, go to https://openai.com/api/ to learn more.  
+<img width="849" alt="Screenshot 2023-02-15 at 8 34 06 PM" src="https://user-images.githubusercontent.com/103340031/219270416-06302385-7d71-4663-93b1-1af4d957e221.png">
+
 ### Endpoints
 * /project: POST to create a new project, GET to retrieve all projects
 * /project/:id: GET to retrieve a specific project, POST to add a new result for a project
