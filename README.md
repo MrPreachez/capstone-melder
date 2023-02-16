@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+# Project Name: Melder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description:
+Melder is a qualitative survey and feedback tool that allows for the intake of multiple user inputs per project and the batch processing of those inputs along with a response prompt to generate a summary or analysis statement of that feedback. Functionally It uses Create React App on the client side, with express and knex on the node.js server.  The server is connected to a MySql database.  From the server the responses and prompt are sent to OpenAI's api for proecessing.
 
-## Available Scripts
+#### note: This project includes a client and server installation
+### disclaimer:  In this projects current state there is a chance there may be an issue with initial rendering if there is no data initially.  I've included a small section of json data to use as a seed to avoid that issue. 
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* Installation - Front End/
+* Usage/
+* Scripts/
+* Installation - Server Side
+* Usage
+* Scripts
+* Lessons 
+* Contributing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Client side Installation
+To get started with the project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository: git clone https://github.com/[username]/[project-name].git
+Install dependencies: npm install
 
-### `npm run build`
+### Usage
+Setup a .env file as per the .env.sample including your localhost.8080 as the address.
+To start the app in development mode, run npm start and open http://localhost:3000 in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The following packages are used on the client side:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* axios
+* react
+* react-router-dom
+* sass
+* pony-props - carousel
+* react-type-animation(note: this package has a bug that has no current solution, it is the cause of the error signal.  A temporary fix has been accomplished to keep the warning from showing in terminal and when a fix is found at a later date, this will be updated.)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Scripts
+The project includes the following scripts:
 
-### `npm run eject`
+* start: starts the app in development mode
+* build: builds the app for production
+* test: runs the test suite
+* eject: ejects from Create React App
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup and Installation for Server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Prerequisites
+* Node.js and npm
+* MySQL
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
+* Clone the repository and navigate to the server directory
+* Run npm install to install the required dependencies listed in the package.json file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Database Setup
+* Create a MySQL database for the application
+* Update the knexfile.js file with your MySQL database credentials
 
-## Learn More
+* Create a .env file and setup like contents of the .env.sample file.  Update the DATABASE_URL with your MySQL credentials.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Migrations
+To set up the database tables, run the following commands:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* npx knex migrate: (to run the first migrations.)
+* To migrate the database, run npm run migrate
+* To undo the last migration, run npm run migrate:down
+* To rollback all migrations, run npm run migrate:rollback
+* To seed the database, run npm run seed
 
-### Code Splitting
+### Usage
+* To start the server, run npm start
+* To start the server in development mode with nodemon, run npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Dependencies
+* axios: ^1.3.2
+* cors: ^2.8.5
+* dotenv: ^16.0.3
+* express: ^4.18.2
+* knex: ^2.4.2
+* mysql: ^2.18.1
+* openai: ^3.1.0
 
-### Making a Progressive Web App
+### Endpoints
+* /project: POST to create a new project, GET to retrieve all projects
+* /project/:id: GET to retrieve a specific project, POST to add a new result for a project
+* /input: POST to add a new response to a project
+* /project/:id/result: GET to retrieve the result for a project
+* /project/:id/all: GET to retrieve all data for a project
+* /responses/:id: GET to retrieve all responses for a project
+* /project/delete/:id: DELETE to delete a project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### JSON data for seeding or thunderclient post
+This block may be used to create a project
+```json
+[  "creator_name": "Damon",
+  "project_name": "Capstone Reflections",
+  "question": "Describe your experience with the capstone project, what surprises did you have, what breakthroughs did you make and what would you do different next time?",
+  "response_type": "context: graduation project reflections,\nquestion: Describe your experience with the capstone project, what surprises did you have, what breakthroughs did you make and what would you do different next time?,\nreply length: max 1000 words,\ntone: polite and light humored,\nperspective: 3rd person objective, overview summary report\noutcome: summarize overall experience, leave some relevant funny solutions for future software dev cohorts."
+  ]
+  ```
+  This code can be used to seed responses.
+```json 
+[
+  {
+   
+    "respondent_name": "Damon999",
+    "response_input": "Wow!  I have to say i loved the process all in all, but i was definitely surprised by the styling aspect. getting my head around that without any style guides was hard.  Once i got into the flow i really start feeling the inspiration and really noticed how much inspiration can fuel your work.  Next time, i might do a bit more style planning, find some useful tool for visually laying out ahead of time.",
+  
+  },
+  {
+    
+    "respondent_name": "ted",
+    "response_input": "Loved it, feeling so inspired.  bringing all the pieces back together and applying them was so great. and to see myself actually figure it out, on my own, well with a bunch of help from my buddy google obviously, was so rewarding, i did learn something in the bootcamp after all, hehe.  ready for another challenge, next time i'll do a little more upfront planning and really value that process.",
+  },
+  {
+    "response_input": "Well, I have to say it feels great to have that under the belt.   Thankfully i was able to remember, or reference all my notes and search for a bunch more information and managed to get it all working in the end.  I was pretty inspired by my project and i think that fuelled a couple late nights thankfully.  I'm not super stoked on the way it looks, but atleast its doing all the cool things i wanted it too.",
+  }
+]
+```
 
-### Advanced Configuration
+## Lessons learned
+Overall, this project challenged me to explore new areas that were incredibly rewarding. I encountered a couple of multi-step processes that required serious thought and trial and error. One such process was creating a new project, which included a couple of unfamiliar steps. For instance, I had to create a project and send its ID immediately in the response to use it for the call right away on the next page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Another challenge was the API call to OPENAI, which had a learning curve of its own. However, through this process, I also learned how to make a call to a database to map content out beforehand, bundle all that information, structure a prompt to send to the API, receive a result, and store it back in the database.
 
-### Deployment
+On my results page, I initially set up three useEffect hooks to retrieve all the data for the page. However, this approach caused a number of issues, such as inconsistent success with API calls that would often time out. I realized that making the call possible with one inner join would be more efficient. Although I was able to get the inner join call to work with most of the required data, I encountered complications with mapping over the accessible data to show the responses. I plan to revisit this issue in the future to optimize the call.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+In the end, I learned how to use .promise to make the call, which resolved the issues I was facing.
 
-### `npm run build` fails to minify
+While i've been able to get this page up and running on Heroku and Netlify, it has come with another number of challenges i have run out of time to address.  i was looking forward to creating a project that some class members could take part in but will have to pass for now.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Lastly, there were a handful of challenges in working woth the OpenAl api.  When it was working it was great, but I lost some considerable time to trying to understand it complexities and causes for malfunction.  That said, i'm stoked on the foundation created and look forward to keep playing.   
+<img width="1630" alt="Screenshot 2023-02-15 at 8 04 43 PM" src="https://user-images.githubusercontent.com/103340031/219267723-36d74828-4277-4985-9df6-c737cb969c6b.png">
+
+<img width="1202" alt="Screenshot 2023-02-15 at 8 06 31 PM" src="https://user-images.githubusercontent.com/103340031/219267920-3a756b34-9310-4b1f-a4a3-4b5873f0d574.png">
+
+
+<img width="1202" alt="Screenshot 2023-02-15 at 8 18 27 PM" src="https://user-images.githubusercontent.com/103340031/219268209-08fa35ee-29dd-4d78-9831-0be73ca9e8f8.png">
+
+
+
+
+### Contributing to Melder
+Contributions are welcome! To contribute to the project, follow these steps:
+
+Fork the repository
+Create a new branch: git checkout -b feature/your-feature-name
+Make your changes and commit them: git commit -m 'Add your commit message here'
+Push to the branch: git push origin feature/your-feature-name
+Submit a pull request
+
+
+
