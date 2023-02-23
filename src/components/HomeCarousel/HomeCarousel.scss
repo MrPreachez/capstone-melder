@@ -5,6 +5,9 @@
 @use "../../styles/partials/variables" as *;
 
 .carousel {
+  &__section {
+    margin-bottom: 12rem;
+  }
   &__list {
   }
   &__border {

@@ -9,6 +9,9 @@
     width: 100%;
     height: auto;
     background-color: #4f4d4a;
+    position: fixed;
+    left: 0;
+    bottom: 0;
   }
   &__container--limit {
     margin: 0 auto;
@@ -47,6 +50,7 @@
 
     @include tablet {
       font-size: 1.4rem;
+      line-height: 2rem;
     }
   }
   &__git {
@@ -55,6 +59,7 @@
     color: $secondaryoffWhite;
     @include tablet {
       font-size: 1.4rem;
+      line-height: 2rem;
     }
   }
   &__linkedIn {
@@ -63,6 +68,7 @@
     color: $secondaryoffWhite;
     @include tablet {
       font-size: 1.4rem;
+      line-height: 2rem;
     }
   }
 }
