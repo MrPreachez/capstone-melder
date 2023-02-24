@@ -42,24 +42,25 @@ function HomePage() {
 
               <p className="about__text">
                 MELDER is all about harnessing the power of AI to make sense of
-                group qualitative feedback and opinion. The name MELDER comes
+                open-ended group feedback and opinion. The name MELDER comes
                 from the idea of collective mind melds, that experience groups
                 of people claim when working together harmoniously and
                 seemlessly, like one mind.
               </p>
               <p className="about__text">
                 No matter if you're an organization, business, or group, we know
-                that making sense of qualitative feedback and opinions can be a
-                challenge. That's why MELDER is here to lend a helping hand! By
-                leveraging the power of language modeling, we aim to transform
-                the chaos of group feedback into a clear and concise summary
-                that you can make use of in a variety of situations.
+                that making sense of qualitative data can be a challenge. That's
+                why MELDER is here to lend a helping hand! By leveraging the
+                power of Large Language Models(LLM's), we aim to transform the
+                chaos of group feedback into a clear and concise summary that
+                you can make use of in a variety of situations.
               </p>
               <p className="about__text">
-                As a prototype, this is still a work in progress and we're still
-                tweaking things to get the best possible outputs for different
-                requirements. But why not give it a try and see how MELDER can
-                help you make sense of your feedback?
+                As a prototype and passion project, this is still a work in
+                progress and we're still tweaking things to get the best
+                possible outputs for different requirements. But why not give it
+                a try and see how MELDER can help you summarize, gain insight
+                and make sense of messy feedback?
               </p>
             </div>
             <div className="homeCreate__CTA">
