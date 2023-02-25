@@ -35,9 +35,12 @@ function HomePage() {
           <div className="card__section--layout">
             <div className="about__title--container">
               <h2 className="about__title1">
-                Transforming Feedback Through AI
+                Transforming Group Feedback Through AI
               </h2>
-              <h3></h3>
+              <h3 className="about__title2">
+                Melder Opens the Door to Quick Analysis and Insight of
+                Qualitative Data
+              </h3>
             </div>
             <div className="about__card">
               <div className="about__text-wrap">
@@ -51,14 +54,16 @@ function HomePage() {
                 <p className="about__text">
                   No matter if you're an organization, business, or group, we
                   know that making sense of qualitative data can be a challenge.
-                  That's why MELDER is here to lend a helping hand! By
-                  leveraging the power of Large Language Models(LLM's), we aim
-                  to transform the chaos of group feedback into a clear and
-                  concise summary that you can actually use. Not only that, but
-                  if you want your response to make a suggesstion like 'how to
-                  bring about greater harmony in the group', you can prompt
-                  Melder to make suggestions, share insight or make a joke and
-                  it will do it's best.
+                  Melder believes this is a lost opportunity in which much time
+                  can be wasted. That's why MELDER is here to lend a helping
+                  hand! By packaging group feedback so it can be sent through
+                  an OpenAI Large Language Model(LLM), we can transform
+                  the chaos of group feedback into a clear and concise summary
+                  that you can use quickly and effectively. Not only that, but if you want your
+                  response to make a suggesstion like 'how to bring about
+                  greater harmony in the group', you can prompt Melder to make
+                  suggestions, share insight or make a joke and it will do it's
+                  best.
                 </p>
                 <p className="about__text">
                   As a prototype and passion project, this is still a work in

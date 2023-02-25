@@ -34,8 +34,9 @@ function HomeCarousel(props) {
               key={project.id}
               {...getCarouselItemProps(idx)}
             >
-              <Link className="carousel__link" to={`/result/${project.id}`}>
+              
                 <div className="carousel__border">
+                <Link className="carousel__link" to={`/result/${project.id}`}>
                   <div className="card__projectName">
                     <span className="card__text">Project: </span>
                     {project.project_name}
@@ -48,8 +49,9 @@ function HomeCarousel(props) {
                     <span className="card__text">Question: </span>
                     {project.question}
                   </div>
+</Link>
                 </div>
-              </Link>
+              
             </li>
           ))}
         </ul>

@@ -64,13 +64,20 @@
       font-size: 3.2rem;
     }
   }
+  &__title2 {
+    margin:1rem;
+    font-size: 1.4;
+    @include tablet {
+      margin: 0 0 2rem 8rem;
+    }
+    
+  }
 
   &__card {
     @include tablet {
       display: flex;
       flex-direction: row;
       padding-top: 4rem;
-
     } 
   }
   &__text-wrap{
@@ -78,7 +85,6 @@
 
     @include tablet {
       padding-right: 4rem;
-
     }
   }
 
