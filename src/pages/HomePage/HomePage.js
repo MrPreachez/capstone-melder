@@ -34,7 +34,7 @@ function HomePage() {
         <section className="card__section">
           <div className="card__section--layout">
             <div className="about__title--container">
-              <h2 className="about__title3">
+              <h2 className="about__title1">
                 Transforming Feedback Through AI
               </h2>
               <h3></h3>
