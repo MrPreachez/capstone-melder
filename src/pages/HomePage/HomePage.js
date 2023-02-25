@@ -33,47 +33,62 @@ function HomePage() {
         </section>
         <section className="card__section">
           <div className="card__section--layout">
-            <div className="about__card">
-              <div className="about__title--container">
-                <h2 className="about__title1">Build Your Form /></h2>
-                <h2 className="about__title2">Gather Feedback /></h2>
-                <h2 className="about__title3">Let Melder Do the Rest</h2>
-              </div>
-
-              <p className="about__text">
-                MELDER is all about harnessing the power of AI to make sense of
-                open-ended group feedback and opinion. The name MELDER comes
-                from the idea of collective mind melds, that experience groups
-                of people claim when working together harmoniously and
-                seemlessly, like one mind.
-              </p>
-              <p className="about__text">
-                No matter if you're an organization, business, or group, we know
-                that making sense of qualitative data can be a challenge. That's
-                why MELDER is here to lend a helping hand! By leveraging the
-                power of Large Language Models(LLM's), we aim to transform the
-                chaos of group feedback into a clear and concise summary that
-                you can make use of in a variety of situations.
-              </p>
-              <p className="about__text">
-                As a prototype and passion project, this is still a work in
-                progress and we're still tweaking things to get the best
-                possible outputs for different requirements. But why not give it
-                a try and see how MELDER can help you summarize, gain insight
-                and make sense of messy feedback?
-              </p>
+            <div className="about__title--container">
+              <h2 className="about__title3">
+                Transforming Feedback Through AI
+              </h2>
+              <h3></h3>
             </div>
-            <div className="homeCreate__CTA">
-              <div className="homeCreate__textContainer">
-                <h3 className="homeCreate__heading">What's your question?</h3>
-                <h4 className="homeCreate__subheading">
-                  Creating Your own Melder Project is simple!
-                </h4>
+            <div className="about__card">
+              <div className="about__text-wrap">
+                <p className="about__text">
+                  MELDER is all about harnessing the power of AI to make sense
+                  of open-ended group feedback and opinion. The name MELDER
+                  comes from the idea of collective mind melds, that experience
+                  groups of people claim when working together harmoniously and
+                  seemlessly, like one mind.
+                </p>
+                <p className="about__text">
+                  No matter if you're an organization, business, or group, we
+                  know that making sense of qualitative data can be a challenge.
+                  That's why MELDER is here to lend a helping hand! By
+                  leveraging the power of Large Language Models(LLM's), we aim
+                  to transform the chaos of group feedback into a clear and
+                  concise summary that you can actually use. Not only that, but
+                  if you want your response to make a suggesstion like 'how to
+                  bring about greater harmony in the group', you can prompt
+                  Melder to make suggestions, share insight or make a joke and
+                  it will do it's best.
+                </p>
+                <p className="about__text">
+                  As a prototype and passion project, this is still a work in
+                  progress and we're still tweaking things to get the best
+                  possible outputs for different requirements. But why not give
+                  it a try and see how MELDER can help you make sense of messy
+                  feedback?
+                </p>
               </div>
 
-              <Link to="/create">
-                <button className="homeCreate__CTA--button">Create Now</button>
-              </Link>
+              <div className="homeCreate__CTA">
+                <div className="homeCreate__textContainer">
+                  <h3 className="homeCreate__heading">
+                    Feedback has Never Been So Exciting!
+                  </h3>
+                  <h4 className="homeCreate__subheading1">
+                    With Melder, asking open-ended questions is no longer
+                    daunting.
+                  </h4>
+                  <h4 className="homeCreate__subheading2">
+                    Make a Melder, it's Simple!
+                  </h4>
+                </div>
+
+                <Link to="/create">
+                  <button className="homeCreate__CTA--button">
+                    Create Now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
 
